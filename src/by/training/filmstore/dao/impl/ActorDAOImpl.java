@@ -147,7 +147,7 @@ public class ActorDAOImpl implements ActorDAO {
 			poolConnection = PoolConnection.getInstance();
 			connection = poolConnection.takeConnection();
 
-			prepStatement = createPrepStatementByOrderCriteria(connection, criteria, parametr);
+			prepStatement = createPrepStatementByActorCriteria(connection, criteria, parametr);
 
 			resultSet = prepStatement.executeQuery();
 
@@ -166,7 +166,7 @@ public class ActorDAOImpl implements ActorDAO {
 		return listActor;
 	}
 	
-	private <T> PreparedStatement createPrepStatementByOrderCriteria(Connection connection, FindActorCriteria criteria,
+	private <T> PreparedStatement createPrepStatementByActorCriteria(Connection connection, FindActorCriteria criteria,
 			T parametr) throws SQLException {
 		PreparedStatement prepStatement = null;
 		switch (criteria) {
