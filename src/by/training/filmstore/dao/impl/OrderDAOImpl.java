@@ -93,7 +93,7 @@ public class OrderDAOImpl implements OrderDAO {
 			connection = poolConnection.takeConnection();
 
 			prepStatement = createPrepStatementByCommandCriteria(connection, parametr, commandDAO);
-			System.out.println(prepStatement);
+
 			int affectedRows = prepStatement.executeUpdate();
 			
 			if (affectedRows != 0) {
